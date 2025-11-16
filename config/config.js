@@ -103,14 +103,14 @@ const portfolioConfig = {
             description: "RF testing play an important role in ensuring the performance and reliability of 5G devices. Developed an automated testing system for NR5G Over-the-Air (OTA) testing using C# and .NET framework. The system integrates with various testing equipment such as signal generators, spectrum analyzers, and power meters to perform comprehensive RF tests on 5G devices. The automated system significantly reduces testing time and improves accuracy compared to manual testing methods.",
             tags: ["5G", "OTA", "RF Test"],
             icon: "fa-chart-line",
-            image: "docs/images/pega-5g-products.JPG"
+            image: "../assets/images/pega-5g-products.JPG"
         },
         {
             title: "Diglett - CPK Analysis Tool",
             description: "Created an automated CPK analysis tool that retrieves test data from production database and automatically calculates the CPK of test items in a specific test station. It aims to assist engineers to quickly generate the CPK data to optimize the analysis. It has been used by cross department and factory engineers in Batam, Taipei, and Vietnam factory.",
             tags: ["C#", ".NET", "Database", "Data Analysis"],
             icon: "fa-chart-line",
-            image: "docs/images/Diglett.JPG"
+            image: "../assets//images/Diglett.JPG"
         },
         {
             title: "Spy Terminal",
@@ -124,21 +124,21 @@ const portfolioConfig = {
             description: "An automated optical inspection system (AOI) to inspect the surface of metallic objects. This project aims to develop a system that can provide good quality images to detect defects on object surfaces. It utilizes an industrial arm robot DENSO RC8 to pick up objects moving on a conveyor and move them to the inspection area. The AOI system uses a set of high-resolution industrial cameras that can capture 6 sides of object surfaces.",
             tags: ["Computer Vision", "Deep Learning", "ROS", "DENSO Robot"],
             icon: "fa-camera",
-            image: "docs/images/aoi-defect-detection-program.jpg"
+            image: "../assets//images/aoi-defect-detection-program.jpg"
         },
         {
             title: "Automated Robotic Polishing",
             description: "Developed a robotic automated polishing system for wooden furniture industries. This automated polishing system is driven by the Fanuc M20iA industrial robot with 25kg of payload to carry the polishing tool and workpieces. The robot is equipped with a mechanical gripper and a force sensor to detect the contact force of the robot with the workpiece. A hybrid position-force control algorithm is proposed as the control system to maintain the contact force of the robot during the polishing process.",
             tags: ["C++", "FANUC Robot", "Force Control", "ROS"],
             icon: "fa-robot",
-            image: "docs/images/robotic-polishing.JPG"
+            image: "../assets//images/robotic-polishing.JPG"
         },
         {
             title: "Indonesia Fire-Fighting Robot Contest",
             description: "Participated in the National Indonesia Fire Fighting Robot Contest 2017 at the Brawijaya University, Indonesia. The mission is to extinguish the fire that is arbitrarily placed in the room. The robot has to navigate through the rooms and corridors to find the fire and extinguish it. Our team achieved finalist position, ranking 5th among 101 teams.",
             tags: ["Arduino", "Robotics", "Kinematics", "PCB Design"],
             icon: "fa-fire-extinguisher",
-            image: "docs/images/firefighting-robot.jpg"
+            image: "../assets//images/firefighting-robot.jpg"
         },
         {
             title: "Hexapod Robot",
