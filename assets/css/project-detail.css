@@ -1,0 +1,391 @@
+/* ===========================
+   PROJECT DETAIL PAGE STYLES
+   =========================== */
+
+.back-link {
+    color: var(--very-light-gray);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    color: var(--gold);
+}
+
+/* Project Header */
+.project-header {
+    padding: 120px 20px 60px;
+    background: linear-gradient(135deg, #0a1628 0%, #1a2942 100%);
+    color: white;
+}
+
+.project-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+}
+
+.project-breadcrumb a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.project-breadcrumb a:hover {
+    color: var(--gold);
+}
+
+.project-breadcrumb span {
+    color: #718096;
+}
+
+.project-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.project-tagline {
+    font-size: 1.25rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e2e8f0;
+}
+
+.meta-item i {
+    color: var(--gold);
+    font-size: 1.1rem;
+}
+
+/* Project Hero Image */
+.project-hero-image {
+    padding: 0;
+    background: #f8f9fa;
+}
+
+.project-hero-image .container {
+    max-width: 1400px;
+}
+
+.project-hero-image img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Project Content */
+.project-content {
+    padding: 80px 20px;
+    background: #ffffff;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.main-content {
+    max-width: 800px;
+}
+
+.main-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0a1628;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.main-content h2:first-child {
+    margin-top: 0;
+}
+
+.main-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a2942;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.main-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.main-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.main-content li {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 0.75rem;
+}
+
+.main-content li strong {
+    color: #0a1628;
+}
+
+/* Impact Grid */
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.impact-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: var(--transition);
+}
+
+.impact-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.impact-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.impact-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0a1628;
+    margin-bottom: 0.5rem;
+}
+
+.impact-card p {
+    font-size: 0.9rem;
+    color: #718096;
+    margin: 0;
+}
+
+/* Tech Stack */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2rem 0;
+}
+
+.tech-badge {
+    background: #fffbf0;
+    color: #0a1628;
+    border: 1px solid #f4d03f;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+}
+
+.sidebar-section {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border: 1px solid #e2e8f0;
+}
+
+.sidebar-section h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0a1628;
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 1.5rem;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 0.85rem;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.info-item p {
+    font-size: 1rem;
+    color: #0a1628;
+    font-weight: 600;
+    margin: 0;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-badge.active {
+    background: #d4f4dd;
+    color: #0e6027;
+}
+
+.status-badge.completed {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.tech-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+.tech-list li:last-child {
+    border-bottom: none;
+}
+
+.tech-list i {
+    color: var(--gold);
+    font-size: 0.85rem;
+}
+
+.related-project {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #4a5568;
+    margin-bottom: 0.75rem;
+    transition: var(--transition);
+}
+
+.related-project:hover {
+    border-color: var(--gold);
+    transform: translateX(5px);
+}
+
+.related-project i {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+.related-project span {
+    font-weight: 600;
+    color: #0a1628;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .project-header h1 {
+        font-size: 2rem;
+    }
+
+    .project-tagline {
+        font-size: 1.1rem;
+    }
+
+    .project-meta {
+        gap: 1rem;
+    }
+
+    .impact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .impact-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .project-header {
+        padding: 100px 20px 40px;
+    }
+
+    .project-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .main-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .main-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+}
