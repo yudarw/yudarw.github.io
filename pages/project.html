@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project Detail - Yuda Risma Wahyudi Portfolio">
+    <title>Project Detail | Yuda Risma Wahyudi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Display-Regular.otf">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/project-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Portfolio Config -->
+    <script src="../assets/js/config.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-circle">Y</span>
+                <!-- <span class="logo-text">Yuda Risma Wahyudi</span> -->
+            </div>
+            <a href="../index.html" class="back-link">
+                Back to Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#projects">Projects</a>
+                <span>/</span>
+                <span id="project-title-breadcrumb">Project</span>
+            </div>
+            <h1 id="project-title">Loading...</h1>
+            <p class="project-tagline" id="project-tagline">Project Description</p>
+            <div class="project-meta" id="project-meta">
+                <!-- Meta info will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <div class="main-content markdown-content" id="markdown-content">
+                    <p>Loading project content...</p>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-section" style="display: none;">
+                        <h3>Project Info</h3>
+                        <div class="info-item">
+                            <strong>Role</strong>
+                            <p id="project-role">Lead Developer</p>
+                        </div>
+                        <div class="info-item">
+                            <strong>Duration</strong>
+                            <p id="project-duration">6 months</p>
+                        </div>
+                        <div class="info-item">
+                            <strong>Status</strong>
+                            <p><span class="status-badge active" id="project-status">Active</span></p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Categories</h3>
+                        <div id="project-technologies">
+                            <!-- Technologies will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Related Projects</h3>
+                        <a href="../index.html#projects" class="related-project">
+                            <i class="fas fa-grid"></i>
+                            <span>View All Projects</span>
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Yuda Risma Wahyudi. All rights reserved.</p>
+            <p>Built with passion for robotics and automation</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get project ID from URL parameter
+        function getProjectId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        // Find project configuration by ID
+        function getProjectConfig(projectId) {
+            const project = portfolioConfig.projects.find(p => p.id === projectId);
+            if (!project) {
+                console.error('Project not found:', projectId);
+                return null;
+            }
+            return project;
+        }
+
+        // Load and render markdown content
+        async function loadMarkdown(markdownFile) {
+            try {
+                const response = await fetch('../' + markdownFile);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const markdown = await response.text();
+                
+                // Configure marked options
+                marked.setOptions({
+                    breaks: true,
+                    gfm: true, // GitHub Flavored Markdown
+                    headerIds: true,
+                    mangle: false
+                });
+                
+                // Convert markdown to HTML
+                const html = marked.parse(markdown);
+                document.getElementById('markdown-content').innerHTML = html;
+                
+            } catch (error) {
+                console.error('Error loading markdown:', error);
+                document.getElementById('markdown-content').innerHTML = 
+                    `<div style="padding: 2rem; text-align: center;">
+                        <p style="color: #e74c3c; font-size: 1.2rem; margin-bottom: 1rem;">
+                            <i class="fas fa-exclamation-triangle"></i> Error loading project content
+                        </p>
+                        <p style="color: #4a5568;">The markdown file could not be loaded. Please check if the file exists.</p>
+                        <p style="color: #718096; font-size: 0.9rem; margin-top: 1rem;">File: ${markdownFile}</p>
+                    </div>`;
+            }
+        }
+
+        // Initialize page
+        function initPage() {
+            const projectId = getProjectId();
+            
+            if (!projectId) {
+                // No project ID provided
+                document.getElementById('markdown-content').innerHTML = 
+                    `<div style="padding: 2rem; text-align: center;">
+                        <p style="color: #e74c3c; font-size: 1.2rem;">No project specified</p>
+                        <p style="color: #4a5568;">Please select a project from the <a href="../index.html#projects">portfolio page</a>.</p>
+                    </div>`;
+                return;
+            }
+
+            const project = getProjectConfig(projectId);
+            
+            if (!project || !project.detail) {
+                // Project not found or no detail configuration
+                document.getElementById('markdown-content').innerHTML = 
+                    `<div style="padding: 2rem; text-align: center;">
+                        <p style="color: #e74c3c; font-size: 1.2rem;">Project not found</p>
+                        <p style="color: #4a5568;">The requested project could not be found. <a href="../index.html#projects">View all projects</a>.</p>
+                    </div>`;
+                return;
+            }
+
+            const config = project.detail;
+            
+            // Set page title and meta
+            document.title = project.title + ' | Yuda Risma Wahyudi';
+            document.getElementById('project-title').textContent = project.title;
+            document.getElementById('project-title-breadcrumb').textContent = project.title;
+            document.getElementById('project-tagline').textContent = config.tagline;
+            
+            // Set meta information
+            const metaHTML = `
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>${config.meta.period}</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>${config.meta.company}</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-tag"></i>
+                    <span>${config.meta.category}</span>
+                </div>
+            `;
+            document.getElementById('project-meta').innerHTML = metaHTML;
+            
+            // Set sidebar info
+            document.getElementById('project-role').textContent = config.sidebar.role;
+            document.getElementById('project-duration').textContent = config.sidebar.duration;
+            
+            const statusBadge = document.getElementById('project-status');
+            statusBadge.className = `status-badge ${config.sidebar.status}`;
+            statusBadge.textContent = config.sidebar.status === 'active' ? 'Active' : 'Completed';
+            
+            // Set categories/technologies
+            const techHTML = '<ul class="tech-list">' + 
+                config.sidebar.technologies.map(tech => 
+                    `<li><i class="fas fa-check"></i>${tech}</li>`
+                ).join('') + 
+                '</ul>';
+            document.getElementById('project-technologies').innerHTML = techHTML;
+            
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Load markdown content
+            loadMarkdown(config.markdownFile);
+        }
+
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', initPage);
+    </script>
+</body>
+</html>
