@@ -179,7 +179,7 @@ const portfolioConfig = {
                           and improves accuracy compared to manual testing methods.`,
             tags: ["5G", "OTA", "RF Test"],
             icon: "fa-chart-line",
-            image: "assets/images/rf-testing.JPG",
+            image: "assets/images/rf-measurements.JPG",
             link: "pages/project.html?id=rf-testing",
             detail: {
                 tagline: "Comprehensive RF testing automation for 5G devices",
@@ -588,3 +588,4 @@ const portfolioConfig = {
         "Industrial Automation"
     ]
 };
+
