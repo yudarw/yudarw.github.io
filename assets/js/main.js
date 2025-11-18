@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
     loadExperienceContent();
     loadEducationContent();
     loadProjectsContent();
+    loadResearchContent();
     loadSkillsContent();
     loadContactContent();
+    initContactForm();
     setCurrentYear();
     initScrollAnimations();
     initBackToTop();
@@ -93,6 +95,9 @@ function loadHeroContent() {
     if (social.twitter) {
         socialHTML += `<a href="${social.twitter}" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>`;
     }
+    if (social.medium) {
+        socialHTML += `<a href="${social.medium}" target="_blank" rel="noopener noreferrer"><i class="fab fa-medium"></i></a>`;
+    }
     if (portfolioConfig.personal.email) {
         socialHTML += `<a href="mailto:${portfolioConfig.personal.email}"><i class="fas fa-envelope"></i></a>`;
     }
@@ -113,7 +118,7 @@ function loadAboutContent() {
     });
     
     // Add resume link at the end
-    html += `<a href="docs/resume-yuda-2025.pdf" target="_blank" class="resume-link">
+    html += `<a href="assets/resume/resume-yuda-2025.pdf" target="_blank" class="resume-link">
         View Full Resume <i class="fas fa-arrow-right"></i>
     </a>`;
     
@@ -204,12 +209,12 @@ function loadProjectsContent() {
                     ${imageContent}
                 </div>
                 <div class="project-content">
-                    <h3>${project.title}</h3>
+                    <h3><a href="${project.link}">${project.title}</a></h3>
                     <p>${project.description}</p>
                     <div class="project-tags">
                         ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                     </div>
-                    <a href="project-${slug}.html" class="project-read-more">
+                    <a href="${project.link}" class="project-read-more">
                         Read More <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -218,6 +223,51 @@ function loadProjectsContent() {
     });
     
     projectsGrid.innerHTML = html;
+}
+
+// ===========================
+// RESEARCH SECTION
+// ===========================
+function loadResearchContent() {
+    const researchList = document.getElementById('research-list');
+    const publications = portfolioConfig.publications;
+    
+    if (!publications || publications.length === 0) {
+        researchList.innerHTML = '<p style="text-align: center; color: #718096;">No publications available at the moment.</p>';
+        return;
+    }
+    
+    let html = '';
+    
+    publications.forEach(pub => {
+        const titleContent = pub.link 
+            ? `<a href="${pub.link}" target="_blank">${pub.title}</a>`
+            : pub.title;
+        
+        html += `
+            <div class="research-item">
+                <div class="research-content">
+                    <h3 class="research-title">${titleContent}</h3>
+                    <p class="research-authors">${pub.authors}</p>
+                    <div class="research-meta">
+                        <span class="research-venue">
+                            <i class="fas fa-university"></i>
+                            ${pub.venue}
+                        </span>
+                        <span class="research-date">
+                            <i class="fas fa-calendar"></i>
+                            ${pub.date}
+                        </span>
+                    </div>
+                    ${pub.link ? `<a href="${pub.link}" target="_blank" class="research-link">
+                        <i class="fas fa-external-link-alt"></i> View Publication
+                    </a>` : ''}
+                </div>
+            </div>
+        `;
+    });
+    
+    researchList.innerHTML = html;
 }
 
 // ===========================
@@ -404,5 +454,57 @@ function initBackToTop() {
             top: 0,
             behavior: 'smooth'
         });
+    });
+}
+
+// ===========================
+// CONTACT SECTION
+// ===========================
+function loadContactContent() {
+    // Load social links in contact section
+    const socialLinksContainer = document.getElementById('social-links-contact');
+    const social = portfolioConfig.social;
+    
+    let socialHTML = '';
+    if (social.linkedin) {
+        socialHTML += `<a href="${social.linkedin}" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>`;
+    }
+    if (social.github) {
+        socialHTML += `<a href="${social.github}" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>`;
+    }
+    if (social.medium) {
+        socialHTML += `<a href="${social.medium}" target="_blank" rel="noopener noreferrer" title="Medium"><i class="fab fa-medium"></i></a>`;
+    }
+    if (social.twitter) {
+        socialHTML += `<a href="${social.twitter}" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>`;
+    }
+    
+    socialLinksContainer.innerHTML = socialHTML;
+    
+    // Update contact info
+    document.getElementById('contact-email').textContent = portfolioConfig.personal.email;
+    document.getElementById('contact-email').href = 'mailto:' + portfolioConfig.personal.email;
+    document.getElementById('contact-location').textContent = portfolioConfig.personal.location;
+}
+
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Create mailto link with pre-filled content
+        const mailtoLink = `mailto:${portfolioConfig.personal.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        
+        // Open default email client
+        window.location.href = mailtoLink;
+        
+        // Optional: Show success message
+        alert('Opening your email client...');
     });
 }
