@@ -17,7 +17,7 @@
     --white: #ffffff;
     
     /* Fonts */
-    --font-primary: -apple-system, 'Inter', 'Figtree', 'Source Sans 3', 'Segoe UI', sans-serif;
+    --font-primary: -apple-system, 'Figtree', 'Inter',  'Source Sans 3', 'Segoe UI', sans-serif;
     --font-mono: 'Fira Code', 'Courier New', monospace;
     
     /* Spacing */
@@ -1347,3 +1347,4 @@ body {
 .fade-in {
     animation: fadeInUp 0.6s ease-out;
 }
+
