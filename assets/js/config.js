@@ -19,6 +19,8 @@ const portfolioConfig = {
         portfolio: "", // Add additional portfolio link if needed
     },
 
+    resume: "Resume - Yuda Risma Wahyudi - 2025.pdf",
+
     // Hero Section
     hero: {
         subtitle: "Senior Automation Test Engineer | Robotic Engineer",
