@@ -17,8 +17,8 @@
     --white: #ffffff;
     
     /* Fonts */
-    --font-primary: -apple-system, 'Inter', 'Figtree','Source Sans 3', 'Segoe UI', sans-serif;
-    --font-mono: 'Fira Code', 'Courier New', monospace;
+    --font-primary: -apple-system, 'Inter','Figtree', 'Source Sans 3', 'Segoe UI', sans-serif;
+    --font-mono: 'consolas', 'Fira Code', monospace;
     
     /* Spacing */
     --section-padding: 80px 20px;
@@ -112,7 +112,7 @@ body {
 .nav-links a {
     color: var(--very-light-gray);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
     transition: var(--transition);
     position: relative;
 }
@@ -984,7 +984,7 @@ body {
    =========================== */
 .contact {
     padding: var(--section-padding);
-    background: #f8f9fa;
+    background: #F3F4F6;
 }
 
 .contact-content {
@@ -1263,15 +1263,15 @@ body {
     }
     
     .timeline::before {
-        left: 0;
+        display: none;
     }
     
     .timeline-item {
-        padding-left: 50px !important;
+        padding-left: 0 !important;
     }
     
     .timeline-item::before {
-        left: -8px !important;
+        display: none;
     }
     
     .hero h1 {
@@ -1311,6 +1311,10 @@ body {
 }
 
 @media (max-width: 600px) {
+    .container {
+        padding: 0 4px;
+    }
+
     .hero h1 {
         font-size: 2rem;
     }
@@ -1327,6 +1331,19 @@ body {
     .btn {
         width: 100%;
         max-width: 250px;
+    }
+
+    .contact-right {
+        background: transparent;
+        padding: 0;
+        border: none;
+        /* border-radius: 4px; */
+        /* border-top: 2px solid #e2e8f0; */
+        /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
+    }
+
+    .contact-form .btn {
+        align-self: center;
     }
 }
 
@@ -1347,6 +1364,3 @@ body {
 .fade-in {
     animation: fadeInUp 0.6s ease-out;
 }
-
-
-
