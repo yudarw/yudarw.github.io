@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Display-Regular.otf">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/project-detail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -60,6 +59,13 @@
 
                 <!-- Sidebar -->
                 <aside class="sidebar">
+                    <div class="sidebar-section" id="table-of-contents-section" style="display: none;">
+                        <h3>Contents</h3>
+                        <nav id="table-of-contents" class="toc-nav">
+                            <!-- TOC will be generated here -->
+                        </nav>
+                    </div>
+
                     <div class="sidebar-section" style="display: none;">
                         <h3>Project Info</h3>
                         <div class="info-item">
@@ -140,6 +146,9 @@
                 // Convert markdown to HTML
                 const html = marked.parse(markdown);
                 document.getElementById('markdown-content').innerHTML = html;
+                
+                // Generate table of contents after content is loaded
+                generateTableOfContents();
                 
             } catch (error) {
                 console.error('Error loading markdown:', error);
@@ -226,6 +235,61 @@
             
             // Load markdown content
             loadMarkdown(config.markdownFile);
+        }
+
+        // Generate Table of Contents from h1 and h2 headers
+        function generateTableOfContents() {
+            const content = document.getElementById('markdown-content');
+            const tocNav = document.getElementById('table-of-contents');
+            const tocSection = document.getElementById('table-of-contents-section');
+            
+            // Find all h1 and h2 headers
+            const headers = content.querySelectorAll('h1, h2');
+            
+            if (headers.length === 0) {
+                tocSection.style.display = 'none';
+                return;
+            }
+            
+            let tocHTML = '<ul class="toc-list">';
+            
+            headers.forEach((header, index) => {
+                // Create unique ID if it doesn't exist
+                if (!header.id) {
+                    header.id = `section-${index}`;
+                }
+                
+                const level = header.tagName.toLowerCase();
+                const text = header.textContent;
+                const id = header.id;
+                
+                if (level === 'h1') {
+                    tocHTML += `<li class="toc-item toc-h1"><a href="#${id}">${text}</a></li>`;
+                } else if (level === 'h2') {
+                    tocHTML += `<li class="toc-item toc-h2"><a href="#${id}">${text}</a></li>`;
+                }
+            });
+            
+            tocHTML += '</ul>';
+            tocNav.innerHTML = tocHTML;
+            tocSection.style.display = 'block';
+            
+            // Add smooth scroll behavior
+            tocNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const offset = 100; // Account for fixed navbar
+                        const targetPosition = targetElement.offsetTop - offset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         }
 
         // Initialize when page loads
