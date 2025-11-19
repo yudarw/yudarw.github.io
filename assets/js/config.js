@@ -77,7 +77,7 @@ const portfolioConfig = {
         {
             title: "Research Assistant",
             company: "Assistive Robotics Lab, National Taipei University of Technology • Taipei, Taiwan",
-            period: "August 2021 - August 2022",
+            period: "August 2021 - July 2022",
             responsibilities: [
                 `Conducted research on several projects related to automated industrial systems, designed the research plan 
                 and proactively addressed challenges to ensure on-time project completion`,
@@ -179,11 +179,11 @@ const portfolioConfig = {
                           and improves accuracy compared to manual testing methods.`,
             tags: ["5G", "OTA", "RF Test"],
             icon: "fa-chart-line",
-            image: "assets/images/rf-measurements.JPG",
+            image: "assets/images/rf-testing.JPG",
             link: "pages/project.html?id=rf-testing",
             detail: {
                 tagline: "Comprehensive RF testing automation for 5G devices",
-                markdownFile: "contents/rf-testing.md",
+                markdownFile: "contents/ota-testing.md",
                 meta: {
                     period: "2022 - Present",
                     company: "PEGATRON",
@@ -201,13 +201,13 @@ const portfolioConfig = {
             id: "diglett",
             title: "Diglett - Auto CPK Generator",
             description: `Created an automated CPK analysis program which can assist engineers to quickly generate the CPK data from production line.`, 
-            tags: ["C#", ".NET", "Database", "Data Analysis"],
+            tags: ["C#", ".NET", "Statistics", "Data Visualization"],
             icon: "fa-chart-line",
-            image: "assets/images/Diglett.JPG",
+            image: "assets/images/cpk.jpg",
             link: "pages/project.html?id=diglett",
             detail: {
                 tagline: "Automated CPK analysis tool for production testing data",
-                markdownFile: "contents/diglett-cpk-analysis.md",
+                markdownFile: "contents/diglett.md",
                 meta: {
                     period: "2022 - Present",
                     company: "PEGATRON",
@@ -217,7 +217,7 @@ const portfolioConfig = {
                     role: "Lead Developer",
                     duration: "6 months (2022)",
                     status: "active",
-                    technologies: ["C#", ".NET Framework", "WPF", "MySQL", "Entity Framework"]
+                    technologies: ["C#", ".NET Framework", "FastAPI"]
                 }
             }
         },
@@ -229,7 +229,7 @@ const portfolioConfig = {
             tags: ["C#", "SSH", "Telnet", "Serial Communication"],
             icon: "fa-terminal",
             image: "assets/images/terminal.jpg",
-            link: "pages/project.html?id=spy-terminal",
+            link: "#",
             detail: {
                 tagline: "Customizable multi-protocol terminal tool for debugging",
                 markdownFile: "docs/projects/spy-terminal.md",
@@ -279,7 +279,7 @@ const portfolioConfig = {
             tags: ["Computer Vision", "Deep Learning", "C++", "Python"],
             icon: "fa-camera",
             image: "assets/images/aoi-defect-detection-program.jpg",
-            link: "pages/project.html?id=aoi-inspection",
+            link: "#",
             detail: {
                 tagline: "Six-sided automated optical inspection system with robotic handling",
                 markdownFile: "docs/projects/aoi-inspection.md",
@@ -303,7 +303,7 @@ const portfolioConfig = {
             tags: ["C++", "FANUC Robot", "Force Control", "ROS"],
             icon: "fa-robot",
             image: "assets/images/robotic-polishing.JPG",
-            link: "pages/project.html?id=robotic-polishing",
+            link: "#",
             detail: {
                 tagline: "Hybrid position-force control for automated wooden furniture polishing",
                 markdownFile: "docs/projects/robotic-polishing.md",
@@ -455,7 +455,7 @@ const portfolioConfig = {
             tags: ["C++", "STM32", "Robotics", "Inverse Kinematics", "Mapping"],
             icon: "fa-bug",
             image: "assets/images/hexapod-robot-design.jpg",
-            link: "pages/project.html?id=hexapod-robot",
+            link: "#",
             detail: {
                 tagline: "Six-legged walking robot with inverse kinematics control",
                 markdownFile: "docs/projects/hexapod-robot.md",
@@ -588,4 +588,3 @@ const portfolioConfig = {
         "Industrial Automation"
     ]
 };
-
