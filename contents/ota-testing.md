@@ -39,7 +39,7 @@ Over-the-Air (OTA) testing is a radiative measurement technique where the distan
 
 During the setup phase, it is essential to identify the optimal testing distance by collecting measurement data at multiple points and analyzing which position yields the most stable and reliable results. This process ensures accurate antenna characterization and enhances the overall integrity of the OTA testing procedure.
 
-![PEGA 5G Product](../assets/images/ota-pathloss.JPG)
+![PEGA 5G Product](../assets/images/ota-pathloss.jpg)
 
 ## 2. Test Program
 
@@ -123,3 +123,4 @@ When test results deviate from expected values, a structured troubleshooting pro
 - **Test Program Logs:** Review DUT logs for firmware or protocol stack issues.
 - **Retesting:** Repeat measurements under controlled variations to isolate root causes.
 Effective troubleshooting ensures that performance issues are resolved and that the DUT is ready for certification or deployment
+
