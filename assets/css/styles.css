@@ -1308,6 +1308,14 @@ body {
     .social-links-contact {
         justify-content: flex-start;
     }
+
+    .logo{
+        margin-left: 12px;
+    }
+
+    .hamburger{
+        margin-right: 12px;
+    }
 }
 
 @media (max-width: 600px) {
