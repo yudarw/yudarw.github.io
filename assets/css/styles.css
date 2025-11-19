@@ -1328,7 +1328,7 @@ body {
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .hero-buttons {
@@ -1360,6 +1360,50 @@ body {
 
     .hamburger{
         margin-right: 12px;
+    }
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 0.9rem;
+    }
+    .timeline-date {
+        font-size: 0.825rem;
+    }
+    .about-text{
+        font-size: 0.925rem;
+    }
+    .project-content h3 {
+        font-size: 1rem;
+    }
+
+    /* Research and Publication */
+    .research-title {
+        font-size: 1rem;
+    }
+    .research-authors {
+        font-size: 0.85rem;
+    }
+    .research-venue {
+        font-size: 0.85rem;
+    }
+    .research-date {
+        font-size: 0.85rem;
+    }
+    .research-link {
+        font-size: 0.85rem;
+    }
+
+    /* Get in Touch */
+    .contact-intro h3{
+        font-size: 1.2rem;
+    }
+    .contact-intro p{
+        font-size: 0.95rem;
+    }
+    .contact-right input{
+        font-size: 0.9rem;
     }
 }
 
