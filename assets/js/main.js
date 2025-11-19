@@ -118,7 +118,7 @@ function loadAboutContent() {
     });
     
     // Add resume link at the end
-    html += `<a href="assets/resume/resume-yuda-2025.pdf" target="_blank" class="resume-link">
+    html += `<a href="assets/resume/${portfolioConfig.resume}" target="_blank" class="resume-link">
         View Full Resume <i class="fas fa-arrow-right"></i>
     </a>`;
     
