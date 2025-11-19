@@ -1345,6 +1345,14 @@ body {
     .contact-form .btn {
         align-self: center;
     }
+
+    .logo{
+        margin-left: 12px;
+    }
+
+    .hamburger{
+        margin-right: 12px;
+    }
 }
 
 /* ===========================
