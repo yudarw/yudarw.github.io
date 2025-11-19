@@ -162,6 +162,27 @@
     color: #0a1628;
 }
 
+.main-content img {
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.main-content figure {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.main-content figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #718096;
+    font-style: italic;
+}
+
 /* Impact Grid */
 .impact-grid {
     display: grid;
@@ -241,8 +262,55 @@
 .sidebar-section h3 {
     font-size: 1rem;
     font-weight: 700;
-    color: #0a1628;
+    color: #718096;
     margin-bottom: 1.5rem;
+}
+
+/* Table of Contents Styles */
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-item {
+    margin-bottom: 0.75rem;
+}
+
+.toc-item:last-child {
+    margin-bottom: 0;
+}
+
+.toc-item a {
+    color: #4a5568;
+    /* text-decoration: none; */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: block;
+    transition: var(--transition);
+    /* padding: 0.1rem 0; */
+}
+
+.toc-item a:hover {
+    color: var(--gold);
+}
+
+.toc-h1 a {
+    font-weight: 600;
+    color: #0a1628;
+}
+
+.toc-h2 {
+    padding-left: 1rem;
+}
+
+.toc-h2 a {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.toc-h2 a:hover {
+    color: var(--gold);
 }
 
 .info-item {
@@ -313,32 +381,26 @@
 }
 
 .related-project {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    display: block;
     text-decoration: none;
     color: #4a5568;
     margin-bottom: 0.75rem;
+    padding: 0.25rem 0;
     transition: var(--transition);
+    font-size: 0.95rem;
 }
 
 .related-project:hover {
-    border-color: var(--gold);
-    transform: translateX(5px);
+    color: var(--gold);
 }
 
 .related-project i {
-    color: var(--gold);
-    font-size: 1.2rem;
+    display: none;
 }
 
 .related-project span {
-    font-weight: 600;
-    color: #0a1628;
+    font-weight: 500;
+    color: inherit;
 }
 
 /* Additional styling for markdown content */
@@ -351,7 +413,7 @@
     font-size: 2rem;
     font-weight: 800;
     color: #0a1628;
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -396,18 +458,18 @@
 .markdown-content img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    margin: 1.5rem 0;
+    /* border-radius: 8px; */
+    margin: 1.5rem auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .markdown-content code {
-    background: #f8f9fa;
+    background: #ecedee;
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: var(--font-mono);
     font-size: 0.9em;
-    color: #E44C65;
+    color: #0a1628;
 }
 
 .markdown-content pre {
@@ -508,5 +570,9 @@
 
     .impact-grid {
         grid-template-columns: 1fr;
+    }
+
+    .sidebar-section {
+        border: none;
     }
 }
