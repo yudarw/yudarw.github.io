@@ -4,18 +4,18 @@ const portfolioData = {
     "title": "Senior Automation Test Engineer | Robotic Automation Specialist",
     "tagline": "Building intelligent automation solutions with cutting-edge robotics and software",
     "about": [
-       `I am a Senior Automation Test Engineer at PEGATRON, specializing in robotic automation and software development.
+      `I am a Senior Automation Test Engineer at PEGATRON, specializing in robotic automation and software development.
         With expertise in industrial robotics, ROS (Robot Operating System), and full-stack development, I create innovative
         solutions that seamlessly integrated hardware and software. My current focus is on developing automated testing frameworks
         for smart manufacturing of 5G products, especially in OTA (Over-The-Air) testing), ensuring the products meet the communication 
         standards and quality as defined by 3GPP.`,
 
-       `In the past, I worked on several industrial robotics automation projects. Designed and implemented robotic control systems
+      `In the past, I worked on several industrial robotics automation projects. Designed and implemented robotic control systems
         for automated polishing, insertion, and automated optical inspection (AOI) using frameworks like ROS, deep learning, and 
         computer vision. Conducted deep research on robot kinematics, control, and motion planning, contributing to multiple patents 
-        and publications.`, 
+        and publications.`,
 
-        `Outside of work, I enjoy experimenting with robotics through simulation platforms like ROS and CoppeliaSim, where I design 
+      `Outside of work, I enjoy experimenting with robotics through simulation platforms like ROS and CoppeliaSim, where I design 
          interfaces and build libraries that support multiple robot platforms — many of which I share on GitHub.`
     ],
     "contact": {
@@ -99,7 +99,7 @@ const portfolioData = {
       "tags": ["C++", "Python", "Hexapod", "STM32"]
     }
   ],
-  "projects": [ 
+  "projects": [
     {
       "title": "Diglett - CPK Analysis Tool",
       "description": `Created an automated CPK analysis program which can assist engineers to quickly generate the CPK data from production line`,
@@ -112,7 +112,7 @@ const portfolioData = {
     },
     {
       "title": "Hybrid Offline-to-Online Robot Teaching Method",
-      "description": 
+      "description":
         `An <strong>Offline-to-Online Robotic Teaching Tool</strong> that combines CAD‑based trajectory
          planning with real‑time teleoperation. Operators can design polishing paths 
          offline, then refine them online using a haptic controller with 3D movement 
@@ -129,7 +129,7 @@ const portfolioData = {
     },
     {
       "title": "Haptic Teleoperation with FANUC",
-      "description": 
+      "description":
         `A software interface enabling haptic teleoperation of FANUC industrial robots using a 3D haptic device.
          Operators can intuitively control robot motion in 3D space with force feedback, enhancing precision
          and ease of use. Developed in C++ using FANUC's API and ROBOGUIDE for seamless integration.`,
@@ -143,7 +143,7 @@ const portfolioData = {
     },
     {
       "title": "Autonomous Robotic Polishing",
-      "description": 
+      "description":
         `Developed an autonomous robotic polishing using industrial robot Fanuc M-20iA equipped with a force sensor. Implement
         a hybrid position force control algorithm to achieve consistent surface finish quality. The system can adapt to varying 
         surface geometries`,
@@ -157,7 +157,7 @@ const portfolioData = {
     },
     {
       "title": "Automated Optical Inspection (AOI) System",
-      "description": 
+      "description":
         `An automated optical inspection system using deep learning for scratch defect detection in manufacturing. The system
         achieves 99.2% accuracy with real-time processing capabilities, significantly improving quality control processes.`,
       "tags": ["Force Control", "Industrial Robot", "Automation", "C++", "ROS"],
@@ -174,7 +174,7 @@ const portfolioData = {
        including dongle, camera, and FWA. Created libraries for communication interface between testing software and testing instruments, `,
       "tags": ["RF Testing", "OTA testing", "5G", "C#", "Python"],
       "icon": "🦾",
-      "image": "assets/images/pega-5g-products.jpg",
+      "image": "assets/images/pega-5g-products.JPG",
       "links": {
         "description": "projects/5g-ota-testing.md"
       }
@@ -220,7 +220,7 @@ const portfolioData = {
       "icon": "fa-robot",
       "items": [
         "Industrial Robotics (Yaskawa, Fanuc, Denso)",
-        "ROS / ROS2",        
+        "ROS / ROS2",
         "Trajectory Planning & Control",
         "SLAM & Navigation",
         "Computer Vision",
