@@ -1,231 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yuda Risma Wahyudi - Robotic Software Engineer & Automated Test Engineer Portfolio">
-    <title>Yuda Risma Wahyudi | Robotic Software Engineer</title>
+    <title>Yuda Risma Wahyudi</title>
+    <link rel="icon" type="image/png" href="assets/logo/logo.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KC31K9FHV"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-1KC31K9FHV');
+        // Only track on production (github.io), not localhost
+        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1KC31K9FHV');
+        } 
     </script>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="container">
-            <!-- <div class="logo"><i class="fas fa-robot" style="margin-right: 10px;">Yuda Risma Wahyudi</i></div> -->
-            <div class="logo">
-                <span class="logo-circle">Y</span>
-                <!-- <span class="logo-text">@yudarw</span> -->
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Profile</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#research">Pubications</a></li>
-                <!-- <li><a href="#contact">Contact</a></li> -->
+        <div class="nav-container">
+            <div class="nav-brand" id="nav-brand"></div>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 data-text="YUDA RISMA WAHYUDI">Yuda Risma Wahyudi</h1>
-            <p class="hero-subtitle" id="hero-subtitle"></p>
-            <div class="hero-description" id="hero-description"></div>
-            <div class="hero-buttons">
-                <a href="#about" class="btn btn-secondary">Profile</a>
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-            </div>
+    <header class="hero">
+        <div class="container">
+            <h1 class="hero-name" id="hero-name"></h1>
+            <h2 class="hero-title" id="hero-title"></h2>
+            <p class="hero-tagline" id="hero-tagline"></p>
             <div class="social-links" id="social-links"></div>
         </div>
-        <div class="hero-animation">
-            <div class="robot-icon">
-                <i class="fas fa-robot"></i>
-            </div>
-        </div>
-    </section>
+    </header>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Main Content -->
+    <main class="main-content">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content"> 
-                <div class="profile-card">
-                    <div class="profile-image">
-                        <img src="assets/images/profile-new.jfif" alt="Yuda Risma Wahyudi">
-                    </div>
-                    <div class="profile-info">
-                        <div class="profile-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:yudarismawahyudi@gmail.com">yudarismawahyudi@gmail.com</a>
-                        </div>
-                        <div class="profile-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://linkedin.com/in/yudarw" target="_blank">linkedin.com/in/yudarw</a>
-                        </div>
-                        <div class="profile-item">
-                            <i class="fab fa-github"></i>
-                            <a href="https://github.com/yudarw" target="_blank">github.com/yudarw</a>
-                        </div>
-                        <div class="profile-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p> Batam, Indonesia </p>
-                            <!-- <span id="current-location">Batam, Indonesia</span> -->
-                        </div>
-                    </div>
-                </div>
+            <!-- About Section -->
+            <section id="about" class="content-section">
+                <h2 class="section-heading">About</h2>
                 <div class="about-text" id="about-text"></div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Education Section -->
-    <section id="education" class="education" style="display: none;">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-grid" id="education-grid"></div>
-        </div>
-    </section>
+            <!-- Experience Section -->
+            <section id="experience" class="content-section">
+                <h2 class="section-heading">Experience</h2>
+                <div class="experience-list" id="experience-list"></div>
+                <a href="assets/resume/Resume - Yuda Risma Wahyudi - 2025.pdf" class="view-full-resume" id="view-resume-link" target="_blank" rel="noopener">Download Full Resume <i class="fas fa-arrow-right"></i></a>
+            </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Relevant Experience</h2>
-            <div class="timeline" id="experience-timeline"></div>
-        </div>
-    </section>
+            <!-- Projects Section -->
+            <section id="projects" class="content-section">
+                <h2 class="section-heading">Projects</h2>
+                <div class="projects-list" id="projects-list"></div>
+                <!-- <a href="#" class="view-archive" id="view-archive-link">View Full Project Archive <i class="fas fa-arrow-right"></i></a> -->
+            </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Recent Works</h2>
-            <div class="projects-grid" id="projects-grid"></div>
-        </div>
-    </section>
+            <!-- Research & Publication Section -->
+            <section id="research" class="content-section">
+                <h2 class="section-heading">Research & Publication</h2>
+                <div class="publications-list" id="publications-list"></div>
+            </section>
 
-    <!-- Research Section -->
-    <section id="research" class="research">
-        <div class="container">
-            <h2 class="section-title">Research & Publications</h2>
-            <div class="research-list" id="research-list"></div>
+            <!-- Skills Section -->
+            <section id="skills" class="content-section">
+                <h2 class="section-heading">Skills & Technologies</h2>
+                <div class="skills-grid" id="skills-grid"></div>
+            </section>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills d-none">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-container" id="skills-container"></div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-left">
-                    <div class="contact-intro">
-                        <h3>Let's Connect</h3>
-                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!</p>
-                    </div>
-                    
-                    <div class="contact-info-cards" style="display: none;">
-                        <div class="contact-card">
-                            <div class="contact-card-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-card-content">
-                                <h4>Email</h4>
-                                <a href="mailto:yudarismawahyudi@gmail.com" id="contact-email">yudarismawahyudi@gmail.com</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-card-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-card-content">
-                                <h4>Location</h4>
-                                <p id="contact-location">Batam, Indonesia</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-social">
-                        <h4>Follow Me</h4>
-                        <div class="social-links-contact" id="social-links-contact">
-                            <!-- Social links will be loaded here -->
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-right">
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; <span id="current-year"></span> Yuda Risma Wahyudi. All rights reserved.</p>
-            <p>Built with passion for robotics and automation</p>
+            <p>Designed & Built by <span id="footer-name"></span></p>
+            <p class="footer-tech" id="footer-text"></p>
         </div>
     </footer>
 
+    <!-- Marked.js for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="assets/js/content.js"></script>
+    <script src="assets/js/app.js"></script>
+    
     <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" title="Back to top">
-        <i class="fas fa-arrow-up"></i>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
     </button>
-
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script>
+        // If navigated with #projects, scroll the projects section into view
+        window.addEventListener('load', () => {
+            if (window.location.hash === '#projects') {
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
 </body>
 </html>

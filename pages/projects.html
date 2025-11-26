@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KC31K9FHV"></script>
+    <script>
+        // Only track on production (github.io), not localhost
+        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1KC31K9FHV');
+        } 
+    </script>
+
+    <style>
+        :root {
+            --navy: #0a192f;
+            --light-navy: #112240;
+            --lightest-navy: #233554;
+            --slate: #8892b0;
+            --light-slate: #a8b2d1;
+            --lightest-slate: #ccd6f6;
+            --green: #64ffda;
+            --green-tint: rgba(100, 255, 218, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        /* Header Section with Theme Color */
+        .project-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--light-navy) 100%);
+            color: var(--lightest-slate);
+            padding: 4rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--green);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.75rem;
+        }
+
+        .project-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--lightest-slate);
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .project-tag {
+            background-color: var(--green-tint);
+            color: var(--green);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Content Section */
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem 2rem;
+        }
+
+        /* Markdown Styling */
+        .markdown-content h1 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .markdown-content h2 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--lightest-slate  );
+            padding-bottom: 0.5rem;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.5rem;
+            color: var(--light-navy);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .markdown-content h4 {
+            font-size: 1.25rem;
+            color: var(--light-navy);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .markdown-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: #2d3748;
+        }
+
+        .markdown-content ul,
+        .markdown-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+
+        .markdown-content a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .markdown-content a:hover {
+            border-bottom-color: var(--lightest-navy);
+        }
+
+        .markdown-content code {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            color: var(--navy);
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        }
+
+        .markdown-content pre {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border: 1px solid #2d3748;
+        }
+
+        .markdown-content pre code {
+            background: transparent;
+            border: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid var(--green);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            color: #4a5568;
+            font-style: italic;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Video container for embedded videos */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 1.25rem 0;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+        }
+        .video-container iframe,
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .video-container video { background: #000; }
+
+        .markdown-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .markdown-content th,
+        .markdown-content td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+
+        .markdown-content th {
+            background: var(--navy);
+            color: white;
+            font-weight: 600;
+        }
+
+        .markdown-content tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+        .markdown-content hr {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 3rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-header {
+                padding: 3rem 1.5rem;
+            }
+
+            .project-header h1 {
+                font-size: 2rem;
+            }
+
+            .project-content {
+                padding: 0 1.5rem 3rem 1.5rem;
+            }
+
+            .markdown-content h1 {
+                font-size: 1.75rem;
+            }
+
+            .markdown-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .markdown-content h3 {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--slate);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--green);
+            color: var(--navy);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(100, 255, 218, 0.5);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 45px;
+                height: 45px;
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="project-header">
+        <div class="header-content">
+            <a href="../index.html#projects" class="back-link">
+                ← Back to Projects
+            </a>
+            <h1 id="project-title">Loading...</h1>
+            <div class="project-meta" id="project-tags"></div>
+        </div>
+    </div>
+
+    <div class="project-content">
+        <div class="markdown-content" id="markdown-content">
+            <p class="loading">Loading project details...</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        // Get project ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('project');
+
+        async function loadProjectDetail() {
+            try {
+                if (!projectId) {
+                    document.getElementById('markdown-content').innerHTML = 
+                        '<p class="loading">No project specified.</p>';
+                    return;
+                }
+
+                // Fetch the markdown file
+                const response = await fetch(`../projects/${projectId}.md`);
+                
+                if (!response.ok) {
+                    throw new Error('Project not found');
+                }
+
+                const markdown = await response.text();
+                
+                // Parse and render markdown
+                const htmlContent = marked.parse(markdown);
+                document.getElementById('markdown-content').innerHTML = htmlContent;
+
+                // Extract title from first h1 in markdown
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = htmlContent;
+                const firstH1 = tempDiv.querySelector('h1');
+                if (firstH1) {
+                    document.getElementById('project-title').textContent = firstH1.textContent;
+                    document.title = firstH1.textContent + ' - Project Details';
+                    firstH1.remove(); // Remove from content since it's in header
+                    document.getElementById('markdown-content').innerHTML = tempDiv.innerHTML;
+                    // After final innerHTML set, perform shortcode replacements (videos, etc.)
+                    embedVideosFromShortcode();
+                }
+                // Load tags from content.js if available
+                loadProjectTags();
+
+            } catch (error) {
+                console.error('Error loading project:', error);
+                document.getElementById('markdown-content').innerHTML = 
+                    '<p class="loading">Failed to load project details. Please try again.</p>';
+            }
+        }
+
+        // Replace [video: URL] shortcodes with responsive players (YouTube/Vimeo/MP4)
+        function embedVideosFromShortcode() {
+            const container = document.getElementById('markdown-content');
+            if (!container) return;
+
+            container.innerHTML = container.innerHTML.replace(/\[video:\s*(https?:\/\/[^\]\s]+|\.\.\/[\w\-\/\.]+)\s*\]/gi, (match, rawUrl) => {
+                const url = rawUrl.trim();
+
+                // YouTube
+                if (/youtube\.com|youtu\.be/i.test(url)) {
+                    let id = '';
+                    if (/youtu\.be\//i.test(url)) {
+                        id = url.split('youtu.be/')[1].split(/[?&]/)[0];
+                    } else {
+                        const m = url.match(/[?&]v=([^&#]+)/);
+                        if (m) id = m[1]; else id = url.split('/').pop();
+                    }
+                    const embed = `https://www.youtube.com/embed/${id}`;
+                    return `<div class="video-container"><iframe src="${embed}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+                }
+
+                // Vimeo
+                if (/vimeo\.com/i.test(url)) {
+                    const id = url.split('/').pop();
+                    const embed = `https://player.vimeo.com/video/${id}`;
+                    return `<div class="video-container"><iframe src="${embed}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>`;
+                }
+
+                // Direct video file (mp4/webm/ogg)
+                if (/\.(mp4|webm|ogg)(\?.*)?$/i.test(url)) {
+                    return `<div class="video-container"><video controls preload="metadata"><source src="${url}" type="video/mp4">Your browser does not support the video tag.</video></div>`;
+                }
+
+                return match;
+            });
+        }
+
+        function loadProjectTags() {
+            // Load portfolio data script and try to find matching project by checking all link values.
+            const script = document.createElement('script');
+            script.src = '../assets/js/content.js';
+            script.onload = () => {
+                if (typeof portfolioData === 'undefined') return;
+
+                const project = portfolioData.projects.find(p => {
+                    if (!p.links) return false;
+                    // Check every link value for a match with projectId
+                    return Object.values(p.links).some(val => {
+                        if (typeof val !== 'string') return false;
+                        // Normalize: remove query/hash
+                        const plain = val.split('?')[0].split('#')[0];
+                        // Direct includes (handles external URLs with slug)
+                        if (plain.includes(projectId)) return true;
+                        // Relative md path ending with projectId.md
+                        if (plain.endsWith(`/${projectId}.md`) || plain.endsWith(`${projectId}.md`)) return true;
+                        // Exact match
+                        if (plain === projectId) return true;
+                        return false;
+                    });
+                });
+
+                if (project && project.tags) {
+                    const tagsHTML = project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('');
+                    document.getElementById('project-tags').innerHTML = tagsHTML;
+                }
+            };
+            document.head.appendChild(script);
+        }
+
+        // Load project when page loads
+        loadProjectDetail();
+
+        // Back to Top Button
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.className = 'back-to-top';
+        backToTopBtn.setAttribute('aria-label', 'Back to top');
+        backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        document.body.appendChild(backToTopBtn);
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
