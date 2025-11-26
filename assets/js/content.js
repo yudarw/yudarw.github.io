@@ -174,7 +174,7 @@ const portfolioData = {
        including dongle, camera, and FWA. Created libraries for communication interface between testing software and testing instruments, `,
       "tags": ["RF Testing", "OTA testing", "5G", "C#", "Python"],
       "icon": "🦾",
-      "image": "assets/images/pega-5g-products.JPG",
+      "image": "assets/images/pegatron5g_products.jpg",
       "links": {
         "description": "projects/5g-ota-testing.md"
       }
