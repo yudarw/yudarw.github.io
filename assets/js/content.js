@@ -1,7 +1,7 @@
 const portfolioData = {
   "profile": {
     "name": "Yuda Risma Wahyudi",
-    "title": "Senior Automation Test Engineer | Robotic Automation Specialist",
+    "title": "Robotic Software Engineer",
     "tagline": "Building intelligent automation solutions with cutting-edge robotics and software",
     "about": [
       `I am a Senior Automation Test Engineer at PEGATRON, specializing in robotic automation and software development.
@@ -34,7 +34,7 @@ const portfolioData = {
       "title": "Senior Automation Test Engineer",
       "company": "PEGATRON",
       "location": "Batam, Indonesia",
-      "date": "September 2022 - Present",
+      "date": "September 2022 — Present",
       "description": [
         `Developed automated test programs for the production line FATP (Final Assembly Test and Pack), enchanced 
          testing algorithms and optimize program structures, resulting in a 20% reduction in testing cycle time`,
@@ -52,7 +52,7 @@ const portfolioData = {
       "title": "Research Assistant",
       "company": "Assistive Robotic Lab, National Taipei University of Technology",
       "location": "Taipei, Taiwan",
-      "date": "August 2021 - July 2022",
+      "date": "August 2021 — July 2022",
       "description": [
         `Led industry-funded research projects on automated industrial systems, collaborating with cross-functional 
          teams to deliver practical solutions.`,
@@ -72,7 +72,7 @@ const portfolioData = {
       "title": "Head of Robotic Team",
       "company": "Robotic Laboratory, State University of Malang",
       "location": "Malang, Indonesia",
-      "date": "2016 - 2018",
+      "date": "2016 — 2018",
       "description": [
         `Managed a cross functional team to design and build a hexapod robot, maintain project timelines, resource allocation, 
          and technical development`,
@@ -87,7 +87,7 @@ const portfolioData = {
       "title": "Electical Engineer (Part-Time)",
       "company": "CV. Innotech Solution",
       "location": "Malang, Indonesia",
-      "date": "2013 - 2016",
+      "date": "2013 — 2016",
       "description": [
         `Managed a cross functional team to design and build a hexapod robot, maintain project timelines, resource allocation, 
          and technical development`,

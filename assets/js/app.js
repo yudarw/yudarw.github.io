@@ -240,14 +240,14 @@ function initScrollEffects() {
     sections.forEach(section => observer.observe(section));
 
     // Add navbar background on scroll
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(10, 25, 47, 0.98)';
-        } else {
-            navbar.style.background = 'rgba(10, 25, 47, 0.95)';
-        }
-    });
+    // const navbar = document.querySelector('.navbar');
+    // window.addEventListener('scroll', () => {
+    //     if (window.scrollY > 50) {
+    //         navbar.style.background = 'rgba(10, 25, 47, 0.98)';
+    //     } else {
+    //         navbar.style.background = 'var(--navy)';
+    //     }
+    // });
 }
 
 // Smooth scrolling for navigation links
